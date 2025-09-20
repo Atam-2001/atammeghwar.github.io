@@ -648,7 +648,37 @@
         </div>
     </section>
 
-    
+  
+<!-- CSS -->
+<style>
+.skill-bar {
+  width: 0; /* start at 0% */
+  transition: width 1.5s ease-in-out;
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const skillBars = document.querySelectorAll('.skill-bar');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const bar = entry.target;
+        const finalWidth = parseInt(bar.getAttribute('data-progress'), 10);
+        bar.style.width = finalWidth + "%";
+        observer.unobserve(bar);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillBars.forEach(bar => {
+    observer.observe(bar);
+  });
+});
+</script>
+  
     
     <!-- Publications Section -->
     <section id="publications" class="py-20 bg-white">
