@@ -545,7 +545,7 @@
 <!-- CSS -->
 <style>
 .skill-bar {
-  width: 100%;
+  width: 0%;
   transition: width 2s ease;
 }
 </style>
@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         const bar = entry.target;
         const finalWidth = bar.getAttribute('data-progress');
-        bar.style.width = finalWidth + "%";
+        bar.style.width = finalWidth + "50%";
         observer.unobserve(bar); // run once
       }
     });
