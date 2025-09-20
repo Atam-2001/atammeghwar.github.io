@@ -653,7 +653,12 @@
 </section>
 
 <!-- CSS -->
-
+<style>
+.skill-bar {
+  width: 0; /* start at 0% */
+  transition: width 1.5s ease-in-out;
+}
+</style>
 
 <!-- JavaScript -->
 <script>
@@ -665,17 +670,18 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         const bar = entry.target;
         const finalWidth = parseInt(bar.getAttribute('data-progress'), 10);
-        bar.style.width = finalWidth + "%";
+        bar.style.width = finalWidth + "%"; // animate to the correct width
         observer.unobserve(bar); // animate only once
       }
     });
-  }, { threshold: 0.3 }); // lower threshold to trigger earlier
+  }, { threshold: 0.3 });
 
   skillBars.forEach(bar => {
     observer.observe(bar);
   });
 });
 </script>
+
 
 
 
