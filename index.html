@@ -575,10 +575,6 @@
             <div class="w-full bg-gray-200 rounded-full h-2.5">
               <div class="bg-primary h-2.5 rounded-full skill-bar" data-progress="88"></div>
             </div>
-              <div class="w-full bg-gray-200 rounded-full h-2.5 skill-bar-container">
-  <div class="bg-primary h-2.5 rounded-full skill-bar" data-progress="95"></div>
-</div>
-
           </div>
           <div>
             <div class="flex justify-between mb-1">
@@ -670,8 +666,8 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         const bar = entry.target;
         const finalWidth = parseInt(bar.getAttribute('data-progress'), 10);
-        bar.style.width = finalWidth + "%"; // animate to the correct width
-        observer.unobserve(bar); // animate only once
+        bar.style.width = finalWidth + "%";
+        observer.unobserve(bar);
       }
     });
   }, { threshold: 0.3 });
