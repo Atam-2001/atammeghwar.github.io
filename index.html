@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function() {
       if (entry.isIntersecting) {
         const bar = entry.target;
         const finalWidth = bar.getAttribute('data-progress');
-        bar.style.width = finalWidth + "50%";
+        bar.style.width = finalWidth + "%";
         observer.unobserve(bar); // run once
       }
     });
