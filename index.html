@@ -485,8 +485,16 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Skills Section</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Feather Icons -->
   <script src="https://unpkg.com/feather-icons"></script>
+  <style>
+    .skill-bar {
+      width: 0%; /* Always start at 0 */
+      transition: width 1.5s ease-in-out;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .skill-bar { transition: none !important; }
+    }
+  </style>
 </head>
 <body class="bg-gray-50">
 
@@ -501,7 +509,7 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      
+
       <!-- Technical Skills -->
       <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
         <div class="flex items-center mb-6">
@@ -511,59 +519,44 @@
           <h3 class="text-xl font-bold text-gray-900">Technical Skills</h3>
         </div>
         <div class="space-y-4">
-          <!-- MS Office -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">MS Office Suite</span>
-              <span class="text-sm text-gray-500">95%</span>
+              <span>MS Office Suite</span><span>95%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <!-- Set --progress and --delay inline -->
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:95%; --delay:0.08s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="95"></div>
             </div>
           </div>
-
-          <!-- Minitab -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Minitab</span>
-              <span class="text-sm text-gray-500">85%</span>
+              <span>Minitab</span><span>85%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:85%; --delay:0.16s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="85"></div>
             </div>
           </div>
-
-          <!-- MATLAB/SIMULINK -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">MATLAB/SIMULINK</span>
-              <span class="text-sm text-gray-500">75%</span>
+              <span>MATLAB/SIMULINK</span><span>75%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:75%; --delay:0.24s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="75"></div>
             </div>
           </div>
-
-          <!-- Python -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Python</span>
-              <span class="text-sm text-gray-500">70%</span>
+              <span>Python</span><span>70%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:70%; --delay:0.32s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="70"></div>
             </div>
           </div>
-
-          <!-- Data Science -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Data Science</span>
-              <span class="text-sm text-gray-500">80%</span>
+              <span>Data Science</span><span>80%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:80%; --delay:0.40s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="80"></div>
             </div>
           </div>
         </div>
@@ -578,58 +571,44 @@
           <h3 class="text-xl font-bold text-gray-900">Professional Skills</h3>
         </div>
         <div class="space-y-4">
-          <!-- Presentation -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Presentation & Communication</span>
-              <span class="text-sm text-gray-500">90%</span>
+              <span>Presentation & Communication</span><span>90%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:90%; --delay:0.08s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="90"></div>
             </div>
           </div>
-
-          <!-- Leadership -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Leadership & Teamwork</span>
-              <span class="text-sm text-gray-500">85%</span>
+              <span>Leadership & Teamwork</span><span>85%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:85%; --delay:0.16s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="85"></div>
             </div>
           </div>
-
-          <!-- Problem Solving -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Problem Solving</span>
-              <span class="text-sm text-gray-500">88%</span>
+              <span>Problem Solving</span><span>88%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:88%; --delay:0.24s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="88"></div>
             </div>
           </div>
-
-          <!-- Teaching -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Teaching</span>
-              <span class="text-sm text-gray-500">92%</span>
+              <span>Teaching</span><span>92%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:92%; --delay:0.32s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="92"></div>
             </div>
           </div>
-
-          <!-- Analytical Thinking -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Analytical Thinking</span>
-              <span class="text-sm text-gray-500">87%</span>
+              <span>Analytical Thinking</span><span>87%</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:87%; --delay:0.40s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="87"></div>
             </div>
           </div>
         </div>
@@ -644,47 +623,36 @@
           <h3 class="text-xl font-bold text-gray-900">Language Skills</h3>
         </div>
         <div class="space-y-4">
-          <!-- Dhatki (100%) -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Dhatki (Mother Tongue)</span>
-              <span class="text-sm text-gray-500">Native</span>
+              <span>Dhatki (Mother Tongue)</span><span>Native</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:100%; --delay:0.08s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="100"></div>
             </div>
           </div>
-
-          <!-- Sindhi (100%) -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Sindhi (Regional)</span>
-              <span class="text-sm text-gray-500">C2</span>
+              <span>Sindhi (Regional)</span><span>C2</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:100%; --delay:0.16s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="100"></div>
             </div>
           </div>
-
-          <!-- Urdu (100%) -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">Urdu (National)</span>
-              <span class="text-sm text-gray-500">C2</span>
+              <span>Urdu (National)</span><span>C2</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:100%; --delay:0.24s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="100"></div>
             </div>
           </div>
-
-          <!-- English (85%) -->
           <div>
             <div class="flex justify-between mb-1">
-              <span class="text-sm font-medium text-gray-700">English (Professional)</span>
-              <span class="text-sm text-gray-500">C1</span>
+              <span>English (Professional)</span><span>C1</span>
             </div>
             <div class="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
-              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" style="--progress:85%; --delay:0.32s;"></div>
+              <div class="bg-indigo-500 h-2.5 rounded-full skill-bar" data-progress="85"></div>
             </div>
           </div>
         </div>
@@ -694,38 +662,25 @@
   </div>
 </section>
 
-<!-- CSS: transform-based animation (0 -> final) -->
-<style>
-  /* The inner bar width is the target width; transform:scaleX animates from 0 -> 1 */
-  .skill-bar {
-    width: var(--progress, 0%);    /* target width (percent) */
-    transform-origin: left center;
-    transform: scaleX(0);          /* start collapsed */
-    animation: fill var(--duration, 1.15s) cubic-bezier(.4,0,.2,1) var(--delay, 0s) forwards;
-    will-change: transform;
-  }
-
-  @keyframes fill {
-    from { transform: scaleX(0); }
-    to   { transform: scaleX(1); }
-  }
-
-  /* If user prefers reduced motion, do not animate */
-  @media (prefers-reduced-motion: reduce) {
-    .skill-bar {
-      animation: none !important;
-      transform: none !important;
-    }
-  }
-</style>
-
-<!-- Minimal JS: only to render feather icons -->
+<!-- JavaScript -->
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    if (window.feather) {
-      try { feather.replace(); } catch (e) { /* ignore if fails */ }
-    }
+document.addEventListener("DOMContentLoaded", function() {
+  if (window.feather) feather.replace();
+
+  const bars = document.querySelectorAll(".skill-bar");
+  // Force initial state 0
+  bars.forEach(bar => { bar.style.width = "0%"; });
+
+  // After paint, animate to target
+  requestAnimationFrame(() => {
+    setTimeout(() => {
+      bars.forEach(bar => {
+        const final = bar.getAttribute("data-progress") || 0;
+        bar.style.width = final + "%";
+      });
+    }, 100); // delay ensures browser showed 0% first
   });
+});
 </script>
 
 </body>
